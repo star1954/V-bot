@@ -1,4 +1,4 @@
-package modules;
+package ExampleModules;
 
 import coremodules.User;
 

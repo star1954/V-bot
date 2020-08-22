@@ -5,7 +5,7 @@ import net.dv8tion.jda.api.events.guild.GuildReadyEvent;
 import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
 import org.apache.log4j.Logger;
 
-public class Module_Event_Interface {
+public class Module_Interface_Event {
     protected Logger logger = Logger.getLogger("V-Bot Logger");
 
     /**
@@ -18,7 +18,7 @@ public class Module_Event_Interface {
      *              Is called when the bot receives a command. Default identifier for a command is ! followed by a message
      * @param event message received event
      */
-    public void OnCommand(GuildMessageReceivedEvent event){ }
+    public void OnCommand(GuildMessageReceivedEvent event){}
 
     /**
      *              Is called when the bot is successfully initialized\n
