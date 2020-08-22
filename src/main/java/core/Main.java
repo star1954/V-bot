@@ -18,12 +18,12 @@ public class Main extends ListenerAdapter {
     //important stuff
     public static final JDABuilder builder = Bot.init();
     //allows extendability by adding services. For future additions and to keep code clean
-    private static final ServiceLoader<Module_Event_Interface> eventModules = ServiceLoader.load(Module_Event_Interface.class);
+    private static final ServiceLoader<Module_Interface_Event> eventModules = ServiceLoader.load(Module_Interface_Event.class);
 
 
     public static void main(String[] args){
         //Ping ping = new Ping();
-        //ServiceLoader<Module_Event_Interface> eventModules = ServiceLoader.load(Module_Event_Interface.class);
+        //ServiceLoader<Module_Interface_Event> eventModules = ServiceLoader.load(Module_Interface_Event.class);
 
     }
 
@@ -33,21 +33,17 @@ public class Main extends ListenerAdapter {
 
 //various events
     @Override
-    public void onReady(ReadyEvent event) {
+    public void onReady(@NotNull ReadyEvent event) {
         super.onReady(event);
         System.out.println("API Ready");
-        eventModules.forEach(a -> {
-            a.OnReady(event);
-        });
+        eventModules.forEach(a -> a.OnReady(event));
     }
 
     //guild = discord server
     @Override
     public void onGuildReady(@NotNull GuildReadyEvent event) {
         super.onGuildReady(event);
-        eventModules.forEach(a -> {
-            a.OnGuildReady(event);
-        });
+        eventModules.forEach(a -> a.OnGuildReady(event));
     }
 
     //when the bot dies
@@ -60,15 +56,15 @@ public class Main extends ListenerAdapter {
     //when recieving a message in a server
     @Override
     public void onGuildMessageReceived(GuildMessageReceivedEvent event) {
-        String message = event.getMessage().getContentDisplay();
-        //System.out.println(eventModules.findFirst());
-        if (message.charAt(0) == commandID) {
-            eventModules.forEach(a -> {
-                a.OnCommand(event);
-            });
+        String message = event.getMessage().getContentRaw();
+        //System.out.println(event.getAuthor()+" "+event.getChannel()+": "+event.getMessage().getContentRaw());
+        //events
+        if (message.length()>0) {
+            if (message.charAt(0) == commandID) {
+                eventModules.forEach(a -> a.OnCommand(event));
+            }
         }
-        eventModules.forEach(a -> {
-            a.OnMessage(event);
-        });
+            eventModules.forEach(a -> a.OnMessage(event));
+
     }
 }
