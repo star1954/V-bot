@@ -18,12 +18,12 @@ public class Main extends ListenerAdapter {
     //important stuff
     public static final JDABuilder builder = Bot.init();
     //allows extendability by adding services. For future additions and to keep code clean
-    private static final ServiceLoader<Module_Event_Interface> eventModules = ServiceLoader.load(Module_Event_Interface.class);
+    private static final ServiceLoader<Module_Interface_Event> eventModules = ServiceLoader.load(Module_Interface_Event.class);
 
 
     public static void main(String[] args){
         //Ping ping = new Ping();
-        //ServiceLoader<Module_Event_Interface> eventModules = ServiceLoader.load(Module_Event_Interface.class);
+        //ServiceLoader<Module_Interface_Event> eventModules = ServiceLoader.load(Module_Interface_Event.class);
 
     }
 
