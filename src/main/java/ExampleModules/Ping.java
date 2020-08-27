@@ -11,7 +11,7 @@ public class Ping extends Command_Interface {
         switch (args[0]){
             case "ping":
                 event.getChannel().sendMessage("Pong!").queue();
-                System.out.println("Ponging");
+                //System.out.println("Ponging");
                 break;
         }
     }

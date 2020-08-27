@@ -6,13 +6,14 @@ import net.dv8tion.jda.api.events.ReadyEvent;
 import net.dv8tion.jda.api.events.guild.GuildReadyEvent;
 import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
+import org.apache.log4j.BasicConfigurator;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ServiceLoader;
 //this is where things get complicated
 public class Main extends ListenerAdapter {
     //Config
-    private final char commandID = '!';
+    private final char commandID = '$';
 
 
     //important stuff
@@ -24,7 +25,7 @@ public class Main extends ListenerAdapter {
     public static void main(String[] args){
         //Ping ping = new Ping();
         //ServiceLoader<Module_Interface_Event> eventModules = ServiceLoader.load(Module_Interface_Event.class);
-
+        BasicConfigurator.configure();
     }
 
     public Main(){
