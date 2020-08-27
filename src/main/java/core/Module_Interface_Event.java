@@ -4,7 +4,9 @@ import net.dv8tion.jda.api.events.ReadyEvent;
 import net.dv8tion.jda.api.events.guild.GuildReadyEvent;
 import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
 
-public class Module_Interface_Event {
+public class Module_Interface_Event extends Module_Interface{
+
+
     /**
      *              Is called when the bot receives any message, including a command. Use only when necessary, as this will fire every message
      * @param event message received event
