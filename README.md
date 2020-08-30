@@ -11,7 +11,7 @@ Adding a "module" through service provider is a little difficult  at first, but 
 Packages are used to organize different classes into groups. In this case, you want to choose a relevant package, and if you can't find one, create one. Packages are all located under `scr/main/java`
 
 ### Step 2: Creating your action classes
-Create a class inside your chosen package. You MUST extend it off of one of the Module_Interface classes, such as Module_Interface_Event, or one of the subclasses, such as Command_Interface. This allows the serviceloader to properly load your class. Use @Override to implement functionality, but make sure to call the overridden method, as some have base functionality. Example below
+Create a class inside your chosen package. You MUST extend it off of one of the Module_Interface classes, such as Module_Interface_Event, or one of the subclasses, such as Command_Interface. This allows the serviceloader to properly load your class. Use @Override to implement functionality, but make sure to call the overridden method, as some have base functionality. Use `super.<methodname>();`. Example below
 ```java
 package ExampleModules;  
   
