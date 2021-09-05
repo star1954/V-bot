@@ -1,6 +1,6 @@
 # V-bot
 
-A bot for Vault(now if you don't know what that means, go shoo)
+A concept project for a variable(modular) discord bot
 
 
 
@@ -64,4 +64,5 @@ Hopefully your logic doesn't cause any bugs. If there's a bug that's caused by t
 
 
 ### FileNotFoundException in BotInit
-You most likely got this when first testing the bot. You're missing a Token.json under `src/main/json`. Add it and your bot token for testing. No, I am not releasing my bot token for obvious reasons, make a bot through discord dev portal yourself.
+You most likely got this when first testing the bot. You're missing a Token.json under `src/main/json`. Add it and your bot token for testing. 
+(No, I am not releasing my bot token for obvious reasons, make a bot through discord dev portal yourself.)
